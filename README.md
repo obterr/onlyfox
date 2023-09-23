@@ -4,6 +4,8 @@ This is the source code for [onlyfox.vip](https://www.onlyfox.vip/)
 
 ## Usage
 
+Note: This project does require seperate PostgreSQL database
+
 Make sure to install Deno: https://deno.land/manual/getting_started/installation
 
 Set up environmental values to .env file
