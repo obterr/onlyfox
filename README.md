@@ -14,16 +14,16 @@ Or modify [main.ts](main.ts) line 13 to
 await start(manifest, {config});
 ```
 
-Start project:
+### Start project
 
 ```
 deno task start
 ```
+This will watch the project directory and restart as necessary.
 
-Start project with docker
+
+### Start project with Docker
 
 ```
 bash update.sh
 ```
-
-This will watch the project directory and restart as necessary.
