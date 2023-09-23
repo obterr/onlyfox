@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+
+.bg {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-image: url("https://cdn.discordapp.com/attachments/690588026635681832/1112804382145249280/Anny_Flashbang.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  
+h2 {
+      text-align: center;
+}
