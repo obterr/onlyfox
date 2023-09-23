@@ -20,6 +20,7 @@ export default function Mega(props: PageProps<MetaProperties>) {
     return (
         <div>
             <Head>
+                <meta http-equiv="refresh" content={"0; url=" + props.data.redirect_url}/>
                 <MetaTags title={props.data.title} description={props.data.description} image={props.data.image} url={props.url.href}/>
             </Head>
             <h2>This page will redirect you to <a href={props.data.redirect_url} rel="noopener">{props.data.redirect_url}</a></h2>
