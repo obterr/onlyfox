@@ -4,28 +4,30 @@
 
 import * as $0 from "./routes/_404.tsx";
 import * as $1 from "./routes/_app.tsx";
-import * as $2 from "./routes/hics/1.tsx";
-import * as $3 from "./routes/hics/2.tsx";
-import * as $4 from "./routes/hics/index.tsx";
-import * as $5 from "./routes/index.tsx";
-import * as $6 from "./routes/mega/1.tsx";
-import * as $7 from "./routes/mega/2.tsx";
-import * as $8 from "./routes/mega/index.tsx";
-import * as $9 from "./routes/vods.tsx";
+import * as $2 from "./routes/asmr.tsx";
+import * as $3 from "./routes/hics/1.tsx";
+import * as $4 from "./routes/hics/2.tsx";
+import * as $5 from "./routes/hics/index.tsx";
+import * as $6 from "./routes/index.tsx";
+import * as $7 from "./routes/mega/1.tsx";
+import * as $8 from "./routes/mega/2.tsx";
+import * as $9 from "./routes/mega/index.tsx";
+import * as $10 from "./routes/vods.tsx";
 import * as $$0 from "./islands/database.tsx";
 
 const manifest = {
   routes: {
     "./routes/_404.tsx": $0,
     "./routes/_app.tsx": $1,
-    "./routes/hics/1.tsx": $2,
-    "./routes/hics/2.tsx": $3,
-    "./routes/hics/index.tsx": $4,
-    "./routes/index.tsx": $5,
-    "./routes/mega/1.tsx": $6,
-    "./routes/mega/2.tsx": $7,
-    "./routes/mega/index.tsx": $8,
-    "./routes/vods.tsx": $9,
+    "./routes/asmr.tsx": $2,
+    "./routes/hics/1.tsx": $3,
+    "./routes/hics/2.tsx": $4,
+    "./routes/hics/index.tsx": $5,
+    "./routes/index.tsx": $6,
+    "./routes/mega/1.tsx": $7,
+    "./routes/mega/2.tsx": $8,
+    "./routes/mega/index.tsx": $9,
+    "./routes/vods.tsx": $10,
   },
   islands: {
     "./islands/database.tsx": $$0,
