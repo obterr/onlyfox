@@ -12,7 +12,8 @@ import * as $6 from "./routes/index.tsx";
 import * as $7 from "./routes/mega/1.tsx";
 import * as $8 from "./routes/mega/2.tsx";
 import * as $9 from "./routes/mega/index.tsx";
-import * as $10 from "./routes/vods.tsx";
+import * as $10 from "./routes/plush.tsx";
+import * as $11 from "./routes/vods.tsx";
 import * as $$0 from "./islands/database.tsx";
 
 const manifest = {
@@ -27,7 +28,8 @@ const manifest = {
     "./routes/mega/1.tsx": $7,
     "./routes/mega/2.tsx": $8,
     "./routes/mega/index.tsx": $9,
-    "./routes/vods.tsx": $10,
+    "./routes/plush.tsx": $10,
+    "./routes/vods.tsx": $11,
   },
   islands: {
     "./islands/database.tsx": $$0,
