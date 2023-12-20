@@ -5,9 +5,11 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
+import * as $asmr from "./routes/asmr.ts";
 import * as $hics_index from "./routes/hics/index.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $mega_index from "./routes/mega/index.tsx";
+import * as $vods from "./routes/vods.ts";
 import * as $countdown from "./islands/countdown.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -16,9 +18,11 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/_layout.tsx": $_layout,
+    "./routes/asmr.ts": $asmr,
     "./routes/hics/index.tsx": $hics_index,
     "./routes/index.tsx": $index,
     "./routes/mega/index.tsx": $mega_index,
+    "./routes/vods.ts": $vods,
   },
   islands: {
     "./islands/countdown.tsx": $countdown,
