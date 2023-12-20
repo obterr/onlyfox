@@ -4,9 +4,7 @@
 
 body {
   background: url("/anny_band.webp");
-  background-size: cover;
-  background-size: 100dvh;
-  @apply text-white w-full h-full;
+  @apply text-white w-full h-full sm:bg-[length:100%] bg-auto;
 }
 
 header {
