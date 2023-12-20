@@ -14,7 +14,12 @@ export default function Navbar() {
         <label htmlFor="nav-responsive" className="sm:hidden">
           <MenuIcon />
         </label>
-        <input id="nav-responsive" type="checkbox" className="hidden peer" />
+        <input
+          id="nav-responsive"
+          type="checkbox"
+          className="hidden peer"
+          checked={false}
+        />
         <menu className="hidden peer-checked:fixed peer-checked:flex peer-checked:flex-col peer-checked:backdrop-blur-lg peer-checked:py-4 peer-checked:border-2 peer-checked:border-purple-300 peer-checked:rounded-md peer-checked:h-fit peer-checked:w-full peer-checked:top-16 peer-checked:right-0 sm:flex sm:gap-4">
           <li>
             <a

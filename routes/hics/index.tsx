@@ -1,11 +1,19 @@
 import { Head } from "$fresh/runtime.ts";
+import { fetchMetadata } from "../../utils/db.ts";
+import MetaTags from "../../components/meta-tags.tsx";
 import { HICS_LINKS } from "../../utils/links.ts";
 
-export default function Page() {
+export default async function Page() {
+  const { title, description, image } = await fetchMetadata({
+    column: "url",
+    table: "mega",
+    identification: "hic",
+  });
   return (
     <>
       <Head>
         <title>Hics compilation</title>
+        <MetaTags title={title} description={description} image={image} />
       </Head>
       <main>
         <h1 className="text-center text-xl sm:text-2xl mb-2">

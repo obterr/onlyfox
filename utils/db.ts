@@ -22,7 +22,12 @@ const client = new Client({
   password: DB_PASSWORD,
 });
 
-await client.connect();
+try {
+  await client.connect();
+} catch (e) {
+  console.error(e);
+  Deno.exit(1);
+}
 
 interface QueryProps {
   column: string;
@@ -30,34 +35,34 @@ interface QueryProps {
   identification: string;
 }
 
-interface QueryResult {
-  title: string;
-  description: string;
-  image: string;
-}
-
 export async function fetchMetadata(
   { column, table, identification }: QueryProps,
 ) {
   const imageQuery = `SELECT ${column} FROM ${table} ORDER BY random() LIMIT 1`;
   const titleQuery =
-    `SELECT title FROM titles WHERE identification=${identification}`;
+    `SELECT title FROM titles WHERE identification = '${identification}'`;
   const descriptionQuery =
-    `SELECT description FROM descriptions WHERE identification=${identification}`;
+    `SELECT description FROM descriptions WHERE identification = '${identification}'`;
 
-  const { rows: [imageResult] } = await client.queryObject<QueryResult>(
+  const { rows: [{ url: image }] } = await client.queryObject<
+    { id: number; url: string }
+  >(
     imageQuery,
   );
-  const { rows: [titleResult] } = await client.queryObject<QueryResult>(
+  const { rows: [{ title }] } = await client.queryObject<
+    { id: number; title: string; identification: string }
+  >(
     titleQuery,
   );
-  const { rows: [descriptionResult] } = await client.queryObject<QueryResult>(
+  const { rows: [{ description }] } = await client.queryObject<
+    { id: number; description: string; identification: string }
+  >(
     descriptionQuery,
   );
 
   return {
-    title: titleResult,
-    description: descriptionResult,
-    image: imageResult,
+    title,
+    description,
+    image,
   };
 }
