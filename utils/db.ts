@@ -2,7 +2,6 @@ import { Client } from "postgres";
 import { load } from "$std/dotenv/mod.ts";
 
 const {
-  ENV,
   DB_USER,
   DB_NAME,
   DB_HOST,
@@ -10,10 +9,7 @@ const {
   DB_PASSWORD,
 } = await load();
 
-if (
-  (DB_USER || DB_NAME || DB_HOST || DB_PORT || DB_PASSWORD) === "" &&
-  ENV !== "dev"
-) {
+if ((DB_USER || DB_NAME || DB_HOST || DB_PORT || DB_PASSWORD) === "") {
   console.error("Some env values are missing or undefined");
   Deno.exit(1);
 }
