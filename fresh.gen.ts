@@ -2,39 +2,28 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $0 from "./routes/_404.tsx";
-import * as $1 from "./routes/_app.tsx";
-import * as $2 from "./routes/asmr.tsx";
-import * as $3 from "./routes/hics/1.tsx";
-import * as $4 from "./routes/hics/2.tsx";
-import * as $5 from "./routes/hics/index.tsx";
-import * as $6 from "./routes/index.tsx";
-import * as $7 from "./routes/mega/1.tsx";
-import * as $8 from "./routes/mega/2.tsx";
-import * as $9 from "./routes/mega/index.tsx";
-import * as $10 from "./routes/plush.tsx";
-import * as $11 from "./routes/vods.tsx";
-import * as $$0 from "./islands/database.tsx";
+import * as $_404 from "./routes/_404.tsx";
+import * as $_app from "./routes/_app.tsx";
+import * as $_layout from "./routes/_layout.tsx";
+import * as $hics_index from "./routes/hics/index.tsx";
+import * as $index from "./routes/index.tsx";
+import * as $mega_index from "./routes/mega/index.tsx";
+import * as $countdown from "./islands/countdown.tsx";
+import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
-    "./routes/_404.tsx": $0,
-    "./routes/_app.tsx": $1,
-    "./routes/asmr.tsx": $2,
-    "./routes/hics/1.tsx": $3,
-    "./routes/hics/2.tsx": $4,
-    "./routes/hics/index.tsx": $5,
-    "./routes/index.tsx": $6,
-    "./routes/mega/1.tsx": $7,
-    "./routes/mega/2.tsx": $8,
-    "./routes/mega/index.tsx": $9,
-    "./routes/plush.tsx": $10,
-    "./routes/vods.tsx": $11,
+    "./routes/_404.tsx": $_404,
+    "./routes/_app.tsx": $_app,
+    "./routes/_layout.tsx": $_layout,
+    "./routes/hics/index.tsx": $hics_index,
+    "./routes/index.tsx": $index,
+    "./routes/mega/index.tsx": $mega_index,
   },
   islands: {
-    "./islands/database.tsx": $$0,
+    "./islands/countdown.tsx": $countdown,
   },
   baseUrl: import.meta.url,
-};
+} satisfies Manifest;
 
 export default manifest;
