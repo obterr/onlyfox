@@ -1,33 +1,39 @@
 import { Head } from "$fresh/runtime.ts";
-import { MetaTags } from "../components/MetaTags.tsx";
-import { BanCountdown, redirectTimer } from "../components/BanCountdown.tsx";
-import MetaUrlPreview, {MetaProperties, DatabaseProps} from "../islands/database.tsx";
-import { type PageProps, type Handlers } from "https://deno.land/x/fresh@1.4.3/src/server/types.ts";
+import Countdown from "../islands/countdown.tsx";
+import MetaTags from "../components/meta-tags.tsx";
+import { timerIsZero } from "../utils/calc-time.ts";
+import { fetchMetadata } from "../utils/db.ts";
+import { SOCIAL_LINKS } from "../utils/links.ts";
 
-export const handler: Handlers<MetaProperties> = {
-    async GET(_req, ctx) {
-        const args: DatabaseProps = {
-            column: "url",
-            table: "images",
-            identification: "stream"
-        }
-        const metaProperties = await MetaUrlPreview(args);
-        metaProperties["redirect_url"] = "https://www.twitch.tv/anny"
-        return ctx.render(metaProperties);
-    },
-};
-
-export default function Home(props: PageProps<MetaProperties>) {
-    return (
-        <div>
-            <Head>
-                <meta http-equiv="refresh" content={redirectTimer() + "; url=" + props.data.redirect_url}/>
-                <MetaTags title={props.data.title} description={props.data.description} image={props.data.image} url={props.url.href}/>
-            </Head>
-            <div className="bg">
-                <h2>This page will redirect you to <a href={props.data.redirect_url} rel="noopener">{props.data.redirect_url}</a></h2>
-                <BanCountdown></BanCountdown>
-            </div>
-        </div>
-    );
+export default async function Home() {
+  const timer = 1703181480;
+  const redirect = timerIsZero(timer)
+    ? 3
+    : Math.floor(timer - (Date.now() / 1000));
+  // implementation of fetching metadata from the database...
+  const { title, description, image } = await fetchMetadata({
+    column: "url",
+    table: "images",
+    identification: "stream",
+  });
+  return (
+    <>
+      <Head>
+        <meta
+          httpEquiv="refresh"
+          content={`${redirect},url=${SOCIAL_LINKS.Twitch}`}
+        />
+        <MetaTags
+          title={title}
+          description={description}
+          image={image}
+        />
+      </Head>
+      <main>
+        <Countdown
+          timer={timer}
+        />
+      </main>
+    </>
+  );
 }

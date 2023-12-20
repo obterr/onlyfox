@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: url("/anny_band.webp");
+  @apply text-white w-full h-full sm:bg-[length:100%] bg-auto;
+}
+
+header {
+  @apply sm:max-w-5xl h-16 sm:mx-auto mb-4;
+}
+
+main {
+  @apply sm:max-w-5xl sm:mx-auto mx-4;
+}
