@@ -8,18 +8,18 @@ export default function Page() {
         <title>Hics compilation</title>
       </Head>
       <main>
-        <h1 className="text-center text-2xl mb-2">
+        <h1 className="text-center text-xl sm:text-2xl mb-2">
           This compilation is splitted in two links:
         </h1>
         <div className="flex gap-4 justify-center">
           <a
-            className="sm:bg-purple-400 sm:py-2 sm:px-6 sm:rounded-full sm:hover:bg-purple-500"
+            className="bg-purple-400 py-2 px-6 rounded-full hover:bg-purple-500"
             href={HICS_LINKS.Part1}
           >
             Part 1
           </a>
           <a
-            className="sm:bg-purple-400 sm:py-2 sm:px-6 sm:rounded-full sm:hover:bg-purple-500"
+            className="bg-purple-400 py-2 px-6 rounded-full hover:bg-purple-500"
             href={HICS_LINKS.Part2}
           >
             Part 2
