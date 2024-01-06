@@ -1,7 +1,7 @@
 import { Head } from "$fresh/runtime.ts";
 import { MetaTags } from "../components/MetaTags.tsx";
 import MetaUrlPreview, {MetaProperties, DatabaseProps} from "../islands/database.tsx";
-import { type PageProps, type Handlers } from "https://deno.land/x/fresh@1.4.3/src/server/types.ts";
+import { type PageProps, type Handlers } from "$fresh/src/server/types.ts";
 
 export const handler: Handlers<MetaProperties> = {
     async GET(_req, ctx) {

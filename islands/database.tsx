@@ -1,6 +1,5 @@
 import { Client } from "https://deno.land/x/postgres@v0.17.0/mod.ts";
 import { load } from "https://deno.land/std@0.202.0/dotenv/mod.ts";
-import { Head } from "$fresh/runtime.ts";
 
 const env = await load();
 
